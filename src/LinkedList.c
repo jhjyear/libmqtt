@@ -224,7 +224,10 @@ static int ListUnlink(List* aList, void* content, int(*callback)(void*, void*), 
         }
 	if (saved == aList->current)
 		saveddeleted = 1;
-	free(aList->current);
+//modify by jhj	
+	if(aList->current != NULL)
+		free(aList->current);
+	
 	if (saveddeleted)
 		aList->current = next;
 	else
