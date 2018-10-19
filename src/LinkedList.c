@@ -269,6 +269,7 @@ int ListRemove(List* aList, void* content)
 void* ListDetachHead(List* aList)
 {
 	void *content = NULL;
+	if(aList == NULL) return NULL;
 	if (aList->count > 0)
 	{
 		ListElement* first = aList->first;
